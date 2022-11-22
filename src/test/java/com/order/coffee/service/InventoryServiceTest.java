@@ -6,14 +6,9 @@ import static org.mockito.Mockito.when;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 
 import com.order.coffee.domain.DrinkIngredient;
@@ -21,11 +16,9 @@ import com.order.coffee.repository.DrinkIngredientRepository;
 import com.order.coffee.repository.IngredientInventoryRepository;
 import com.order.coffee.service.manager.InventoryManager;
 import com.order.coffee.service.manager.PriceManager;
-import com.order.coffee.transport.Drink;
 import com.order.coffee.transport.OrderResponse;
 
-@ExtendWith(MockitoExtension.class)
-@RunWith(MockitoJUnitRunner.Silent.class)
+@SpringBootTest
 class InventoryServiceTest {
 
 	@InjectMocks

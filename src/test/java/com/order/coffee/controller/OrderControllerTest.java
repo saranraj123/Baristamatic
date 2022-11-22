@@ -7,21 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 
 import com.order.coffee.service.OrderService;
 import com.order.coffee.transport.Menu;
 import com.order.coffee.transport.OrderResponse;
 
-@ExtendWith(MockitoExtension.class)
-@RunWith(MockitoJUnitRunner.Silent.class)
+@SpringBootTest
 class OrderControllerTest {
 
 	@InjectMocks

@@ -8,17 +8,6 @@ INSERT INTO INGREDIENT_INVENTORY(INGREDIENT_NAME, AVAILABILITY, UNIT_COST) VALUE
   ('espresso', 10,1.10),
   ('cocoa', 10,0.90),
   ('whipped_cream', 10,1.00);
-
-INSERT INTO INGREDIENT_COST (INGREDIENT_NAME, UNIT_COST) VALUES
-  ('coffee', 0.75),
-  ('decaf_coffee', 0.75),
-  ('sugar', 0.25),
-  ('cream', 0.25),
-  ('steamed_milk', 0.35),
-  ('foamed_milk', 0.35),
-  ('espresso', 1.10),
-  ('cocoa', 0.90),
-  ('whipped_cream', 1.00);
   
   INSERT INTO DRINK_INGREDIENT (DRINK_NAME, COFFEE,DECAF,SUGAR,CREAM,STEAMED_MILK,FOAMED_MILK,ESPRESSO,COCOA,WHIPPED_CREAM) VALUES
   ('coffee', 3,0,1,1,0,0,0,0,0),
