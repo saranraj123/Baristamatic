@@ -45,6 +45,29 @@ public class DrinkIngredient {
 
 	@Column(name = "WHIPPED_CREAM")
 	private Integer whipped_cream;
+	
+	
+	public DrinkIngredient() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public DrinkIngredient(Integer drinkId, String drinkName, Integer coffee, Integer decaf_coffee, Integer sugar,
+			Integer cream, Integer steamed_milk, Integer foamed_milk, Integer espresso, Integer cocoa,
+			Integer whipped_cream) {
+		super();
+		this.drinkId = drinkId;
+		this.drinkName = drinkName;
+		this.coffee = coffee;
+		this.decaf_coffee = decaf_coffee;
+		this.sugar = sugar;
+		this.cream = cream;
+		this.steamed_milk = steamed_milk;
+		this.foamed_milk = foamed_milk;
+		this.espresso = espresso;
+		this.cocoa = cocoa;
+		this.whipped_cream = whipped_cream;
+	}
 
 	public Integer getDrinkId() {
 		return drinkId;

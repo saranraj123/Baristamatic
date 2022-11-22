@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.order.coffee.domain.DrinkIngredient;
 import com.order.coffee.repository.DrinkIngredientRepository;
+import com.order.coffee.service.manager.InventoryManager;
+import com.order.coffee.service.manager.PriceManager;
 import com.order.coffee.transport.Drink;
 import com.order.coffee.transport.Menu;
 import com.order.coffee.transport.OrderResponse;
@@ -19,6 +21,13 @@ public class OrderService {
 
 	@Autowired
 	InventoryService inventoryService;
+
+	@Autowired
+	InventoryManager inventoryManager;
+
+	@Autowired
+	PriceManager priceManager;
+
 	@Autowired
 	DrinkIngredientRepository drinkIngredientRepository;
 
@@ -31,8 +40,9 @@ public class OrderService {
 		Menu menu = new Menu();
 		List<Drink> drinks = new ArrayList<>();
 		drinkIngredient.stream().forEach(ingredient -> drinks.add(new Drink(ingredient.getDrinkId(),
-				ingredient.getDrinkName(), inventoryService.calculateDrinkPrice(ingredient.getDrinkName()),
-				inventoryService.isInventoryAvailable(ingredient.getDrinkName(), Constants.REQUEST_SOURCE_MENU))));
+				ingredient.getDrinkName(),
+				"$" + String.valueOf(priceManager.calculateDrinkPrice(ingredient.getDrinkName())),
+				inventoryManager.isInventoryAvailable(ingredient.getDrinkName(), Constants.REQUEST_SOURCE_MENU))));
 		menu.setDrinks(drinks);
 		menu.setHttpStatus(HttpStatus.OK);
 		return menu;

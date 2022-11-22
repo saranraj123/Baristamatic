@@ -6,11 +6,11 @@ public class Drink {
 
 	private String drinkName;
 
-	private double drinkCost;
+	private String drinkCost;
 
 	private boolean availability;
 
-	public Drink(Integer drinkId, String drinkName, double drinkCost, boolean availability) {
+	public Drink(Integer drinkId, String drinkName, String drinkCost, boolean availability) {
 		super();
 		this.drinkId = drinkId;
 		this.drinkName = drinkName;
@@ -34,11 +34,11 @@ public class Drink {
 		this.drinkName = drinkName;
 	}
 
-	public double getDrinkCost() {
+	public String getDrinkCost() {
 		return drinkCost;
 	}
 
-	public void setDrinkCost(double drinkCost) {
+	public void setDrinkCost(String drinkCost) {
 		this.drinkCost = drinkCost;
 	}
 
