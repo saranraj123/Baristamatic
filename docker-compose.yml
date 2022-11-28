@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  baristamatic:
+    image: saranrajb/baristamatic
+    ports:
+      - "5000:8080"
+    restart: always
+     
